@@ -62,7 +62,7 @@ func NewRenewBillingOrderRequest(
 /*
  * param regionId: 地域ID (Required)
  * param clusterId: 续费集群clusterId (Optional)
- * param type: "必传参数，计费类型"
+ * param type_: "必传参数，计费类型"
       "* 1:按配置"
       "* 601-609：包年包月1一个月到9个月"
       "* 610:包年包月一年"
@@ -72,7 +72,7 @@ func NewRenewBillingOrderRequest(
 func NewRenewBillingOrderRequestWithAllParams(
     regionId string,
     clusterId *string,
-    type *int,
+    type_ *int,
 ) *RenewBillingOrderRequest {
 
     return &RenewBillingOrderRequest{
@@ -84,7 +84,7 @@ func NewRenewBillingOrderRequestWithAllParams(
         },
         RegionId: regionId,
         ClusterId: clusterId,
-        Type: type,
+        Type: type_,
     }
 }
 
@@ -111,14 +111,14 @@ func (r *RenewBillingOrderRequest) SetClusterId(clusterId string) {
     r.ClusterId = &clusterId
 }
 
-/* param type: "必传参数，计费类型"
+/* param type_: "必传参数，计费类型"
       "* 1:按配置"
       "* 601-609：包年包月1一个月到9个月"
       "* 610:包年包月一年"
       "* 620:包年包月两年"
 (Optional) */
-func (r *RenewBillingOrderRequest) SetType(type int) {
-    r.Type = &type
+func (r *RenewBillingOrderRequest) SetType(type_ int) {
+    r.Type = &type_
 }
 
 // GetRegionId returns path parameter 'regionId' if exist,
